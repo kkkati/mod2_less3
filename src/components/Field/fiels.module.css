@@ -1,0 +1,13 @@
+.fieldContainer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 120px;
+}
+
+.fieldButton {
+  margin: 2px;
+  width: 30px;
+  height: 30px;
+  color: brown;
+}
