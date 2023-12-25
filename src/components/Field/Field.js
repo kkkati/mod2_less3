@@ -1,28 +1,23 @@
 import styles from "./fiels.module.css";
-export const FieldContainer = ({
-  field,
-  setField,
-  currentPlayer,
-  setCurrentPlayer,
-}) => {
-  const getPlayerAction = (event) => {
-    setField((field[event.target.id] = currentPlayer));
-    //field[event.target.id] = currentPlayer;
-    console.log(field);
-    if (currentPlayer == "X") {
-      setCurrentPlayer("0");
-    } else setCurrentPlayer("X");
-  };
+import PropTypes from "prop-types";
+
+export const FieldContainer = ({ field, getPlayerAction }) => {
   return (
     <div>
       <FieldLayout field={field} getPlayerAction={getPlayerAction} />
     </div>
   );
 };
+
+FieldContainer.PropType = {
+  field: PropTypes.bool,
+  getPlayerAction: PropTypes.func,
+};
+
 const FieldLayout = ({ field, getPlayerAction }) => {
   return (
-    <div className={styles.fieldContainer}>
-      <div>
+    <div>
+      <div className={styles.fieldContainer}>
         {field.map((item, index) => {
           return (
             <button

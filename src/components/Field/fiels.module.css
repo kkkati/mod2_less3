@@ -1,8 +1,15 @@
+* {
+  box-sizing: "border-box";
+}
+
 .fieldContainer {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   width: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .fieldButton {
