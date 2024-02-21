@@ -1,28 +1,15 @@
-import PropTypes from "prop-types";
+import { store } from "../../store";
 
-export const InformationContainer = ({
-  isDraw,
-  isGameEnded,
-  currentPlayer,
-}) => {
+export const InformationContainer = () => {
   return (
     <div>
-      <InformationLayout
-        isDraw={isDraw}
-        isGameEnded={isGameEnded}
-        currentPlayer={currentPlayer}
-      />
+      <InformationLayout />
     </div>
   );
 };
 
-InformationContainer.Prototype = {
-  isDraw: PropTypes.bool,
-  isGameEnded: PropTypes.bool,
-  currentPlayer: PropTypes.string,
-};
-
-const InformationLayout = ({ isDraw, currentPlayer, isGameEnded }) => {
+const InformationLayout = () => {
+  const { isDraw, isGameEnded, currentPlayer } = store.getState();
   return (
     <div className="Information">
       <layout>
@@ -34,9 +21,4 @@ const InformationLayout = ({ isDraw, currentPlayer, isGameEnded }) => {
       </layout>
     </div>
   );
-};
-InformationLayout.Prototype = {
-  isDraw: PropTypes.bool,
-  isGameEnded: PropTypes.bool,
-  currentPlayer: PropTypes.string,
 };
